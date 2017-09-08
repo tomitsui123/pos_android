@@ -1,15 +1,13 @@
-package com.example.tomi.myapplication;
+package com.example.tomi.pos_android;
 
 import android.content.Context;
-import android.support.v7.widget.LinearLayoutCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.GridView;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
 
 /**
  * Created by tomi on 9/2/17.
@@ -42,7 +40,7 @@ public class ItemAdapter extends BaseAdapter {
         return 0;
     }
 
-    public class Holder {
+    private class Holder {
         TextView name;
         TextView price;
     }
@@ -52,20 +50,20 @@ public class ItemAdapter extends BaseAdapter {
         Holder holder=new Holder();
         View rowView;
 
-        rowView = inflater.inflate(R.layout.item, null);
-        holder.name=(TextView) rowView.findViewById(R.id.itemName);
-        holder.price=(TextView) rowView.findViewById(R.id.itemPrice);
+rowView = inflater.inflate(R.layout.item, null);
+holder.name= rowView.findViewById(R.id.itemName);
+holder.price= rowView.findViewById(R.id.itemPrice);
 
-        holder.name.setText(itemName[position]);
-        holder.price.setText(String.valueOf(itemPrice[position]));
+holder.name.setText(itemName[position]);
+holder.price.setText(String.valueOf(itemPrice[position]));
 
-        rowView.setOnClickListener(new View.OnClickListener() {
+rowView.setOnClickListener(new View.OnClickListener() {
 
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(context, "You Clicked "+itemName[position], Toast.LENGTH_LONG).show();
-            }
-        });
-        return rowView;
-    }
+@Override
+public void onClick(View v) {
+Toast.makeText(context, "You Clicked "+itemName[position], Toast.LENGTH_LONG).show();
+}
+});
+return rowView;
+}
 }

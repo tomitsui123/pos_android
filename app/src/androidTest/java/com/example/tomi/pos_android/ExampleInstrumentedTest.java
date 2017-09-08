@@ -1,4 +1,4 @@
-package com.example.tomi.myapplication;
+package com.example.tomi.pos_android;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
