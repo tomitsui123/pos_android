@@ -49,21 +49,19 @@ public class ItemAdapter extends BaseAdapter {
     public View getView(final int position, View convertView, ViewGroup parent) {
         Holder holder=new Holder();
         View rowView;
+        rowView = inflater.inflate(R.layout.item, null);
+        holder.name= rowView.findViewById(R.id.itemName);
+        holder.price= rowView.findViewById(R.id.itemPrice);
 
-rowView = inflater.inflate(R.layout.item, null);
-holder.name= rowView.findViewById(R.id.itemName);
-holder.price= rowView.findViewById(R.id.itemPrice);
+        holder.name.setText(itemName[position]);
+        holder.price.setText(String.valueOf(itemPrice[position]));
 
-holder.name.setText(itemName[position]);
-holder.price.setText(String.valueOf(itemPrice[position]));
-
-rowView.setOnClickListener(new View.OnClickListener() {
-
-@Override
-public void onClick(View v) {
-Toast.makeText(context, "You Clicked "+itemName[position], Toast.LENGTH_LONG).show();
-}
-});
-return rowView;
-}
+//        rowView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(context, "You Clicked "+itemName[position], Toast.LENGTH_LONG).show();
+//            }
+//        });
+        return rowView;
+    }
 }

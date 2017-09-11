@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    android:background="#ffffffff"
+    android:orientation="vertical"
+    android:id="@+id/dialogPayBill"
+    android:stretchColumns="*">
+
+    <TableRow android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="總計"
+            />
+        <TextView
+            android:id="@+id/payBillTotalAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="金額"
+            />
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="收取金額"/>
+        <EditText
+            android:id="@+id/editText_amount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/tvname"
+            android:inputType="number"
+            android:layout_marginLeft="20dp"
+            android:minWidth="100dip" />
+    </TableRow>
+</TableLayout>
